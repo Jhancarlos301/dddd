@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delimonster</title>
+  <link rel="shortcut icon" href="../assets/img/favicon.webp" type="image/x-icon">
+  <link rel="stylesheet" href="../output.css">
+</head>
+
+<body>
+  <style>
+    .gallery-image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+      border-radius: 0.75rem;
+      /* Equivalente a rounded-xl en Tailwind */
+    }
+
+    .aspect-185-123 {
+      position: relative;
+      width: 100%;
+      padding-top: 66.49%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-280-421 {
+      position: relative;
+      width: 100%;
+      padding-top: 150.22%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-1-1 {
+      position: relative;
+      width: 100%;
+      padding-top: 100%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-341-273 {
+      position: relative;
+      width: 100%;
+      padding-top: 124.90%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-2-3 {
+      position: relative;
+      width: 100%;
+      padding-top: 150%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-133 {
+      position: relative;
+      width: 100%;
+      padding-top: 133%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-149 {
+      position: relative;
+      width: 100%;
+      padding-top: 149.48%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+
+    .aspect-124 {
+      position: relative;
+      width: 100%;
+      padding-top: 124.30%;
+      /* Esto crea un contenedor con una relación de aspecto 4:3 */
+      overflow: hidden;
+    }
+  </style>
+  <nav class="ml-5 mt-5 flex" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+      <li class="inline-flex items-center">
+        <a href="./index.html"
+          class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-emerald-600">
+          <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+            viewBox="0 0 20 20">
+            <path
+              d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z" />
+          </svg>
+          Inicio
+        </a>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+          <a href="../comidas.html"
+            class="ms-1 text-sm font-medium text-gray-700 hover:text-emerald-600 md:ms-2">Comidas</a>
+        </div>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+              d="m1 9 4-4-4-4" />
+          </svg>
+          <a href="#"
+            class="ms-1 text-sm font-medium text-gray-700 hover:text-emerald-600 md:ms-2">Delimonster</a>
+        </div>
+      </li>
+    </ol>
+  </nav>
+  <div class=" px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-2">
+      <div class="space-y-2">
+        <div class="aspect-185-123">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (1).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+        <div class="aspect-280-421">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (2).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+        <div class="aspect-1-1">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (3).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="aspect-341-273">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (4).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+        <div class="aspect-2-3">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (5).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="aspect-185-123">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (7).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+        <div class="aspect-133">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (8).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+        <div class="aspect-185-123">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (9).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+      </div>
+      <div class="space-y-2">
+        <div class="aspect-149">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (10).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+        <div class="aspect-124">
+          <img class="gallery-image" src="../assets/img/lugares/delimonster/1 (11).jpg" alt="Gallery Masonry Image"
+            onclick="openImage(this)">
+        </div>
+      </div>
+    </div>
+    <!-- Modal para mostrar la imagen en grande -->
+    <div id="imageModal" class=" z-10 fixed inset-0 flex items-center justify-center bg-black bg-opacity-75 hidden">
+      <img id="modalImage" class="max-w-full max-h-full rounded-xl" src="" alt="Expanded Image">
+      <button onclick="closeImage()" class="absolute top-4 right-4 text-white text-2xl">&times;</button>
+    </div>
+  </div>
+
+
+
+  <!-- Blog Article -->
+  <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8 mx-auto">
+    <div class="grid lg:grid-cols-3 gap-y-8 lg:gap-y-0 lg:gap-x-6">
+      <!-- Content -->
+      <div class="lg:col-span-2">
+        <div class="py-8 lg:pe-8">
+          <div class="space-y-5 lg:space-y-8">
+            <h2 class="text-3xl font-bold lg:text-5xl text-emerald-900">Delimonster</h2>
+
+            <div class="flex items-center gap-x-5">
+              <a target="_blank" href="https://maps.app.goo.gl/t3wQPs9b5ZooZEiB7" class="inline-flex items-center gap-1.5 py-1 px-3 sm:py-2 sm:px-4 rounded-full text-xs sm:text-sm bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200"
+                href="#">
+                Cll 102B Crr 86A, Obrero B/3.
+              </a>
+              <p class="text-xs sm:text-sm text-gray-800">Aparatadó, Ant.</p>
+            </div>
+
+            <p class="text-lg text-gray-800">Delimonster es el lugar perfecto para los amantes de
+              las picadas únicas y llenas de sabor. Especializados en ofrecer una variedad de picadas que van más allá
+              de lo convencional, Delimonster se destaca por sus generosas porciones de carne, chicharrón y
+              acompañamientos que desafían los límites de lo que una picada puede ser. Aquí, cada plato está diseñado
+              para satisfacer hasta al más exigente de los comensales.</p>
+
+            <blockquote class="text-center p-4 sm:px-7 ">
+              <p
+                class=" mb-8 text-xl font-medium text-gray-800 lg:text-2xl lg:leading-normal xl:text-2xl xl:leading-normal">
+                "Delimonster ofrece picadas excepcionales con carnes jugosas y chicharrón crujiente. La super monster es
+                deliciosa y las porciones generosas."
+              </p>
+            </blockquote>
+          </div>
+          <!-- List -->
+          <div class="space-y-3">
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500">Horarios:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="M5 5v14a1 1 0 0 0 1 1h3v-2H7V6h2V4H6a1 1 0 0 0-1 1zm14.242-.97-8-2A1 1 0 0 0 10 3v18a.998.998 0 0 0 1.242.97l8-2A1 1 0 0 0 20 19V5a1 1 0 0 0-.758-.97zM15 12.188a1.001 1.001 0 0 1-2 0v-.377a1 1 0 1 1 2 .001v.376z"></path></svg>
+                    De 6:00 PM
+                  </li>
+                  <li
+                    class="me-1 inline-flex items-center text-sm text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: rotate(180deg);msFilter:progid:DXImageTransform.Microsoft.BasicImage(rotation=2);"><path d="M10.385 21.788a.997.997 0 0 0 .857.182l8-2A.999.999 0 0 0 20 19V5a1 1 0 0 0-.758-.97l-8-2A1.003 1.003 0 0 0 10 3v1H6a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4v1c0 .308.142.599.385.788zM12 4.281l6 1.5v12.438l-6 1.5V4.281zM7 18V6h3v12H7z"></path><path d="M14.242 13.159c.446-.112.758-.512.758-.971v-.377a1 1 0 1 0-2 .001v.377a1 1 0 0 0 1.242.97z"></path></svg>
+                    A 11:00 PM
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500">Domicilios:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: ;msFilter:;"><path d="m20.487 17.14-4.065-3.696a1.001 1.001 0 0 0-1.391.043l-2.393 2.461c-.576-.11-1.734-.471-2.926-1.66-1.192-1.193-1.553-2.354-1.66-2.926l2.459-2.394a1 1 0 0 0 .043-1.391L6.859 3.513a1 1 0 0 0-1.391-.087l-2.17 1.861a1 1 0 0 0-.29.649c-.015.25-.301 6.172 4.291 10.766C11.305 20.707 16.323 21 17.705 21c.202 0 .326-.006.359-.008a.992.992 0 0 0 .648-.291l1.86-2.171a.997.997 0 0 0-.085-1.39z"></path></svg>
+                    3134023218
+                  </li>
+                  <a target="_blank" href="https://wa.link/pf2vb0" class="me-1 inline-flex items-center text-sm text-emerald-600 font-semibold">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(0, 117, 22);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                    ¡Pedir Ahora!
+                  </a>
+                </ul>
+              </dd>
+            </dl>
+
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500">Menu:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <a target="_blank" href="../assets/img/lugares/delimonster/menu.jpg"
+                    class="me-1 inline-flex items-center text-sm text-gray-800 font-bold">
+                    Descargar y Ver
+                </a>
+                </ul>
+              </dd>
+            </dl>
+
+            <dl class="flex flex-col sm:flex-row gap-1">
+              <dt class="min-w-40">
+                <span class="block text-sm text-gray-500">Platos destacados:</span>
+              </dt>
+              <dd>
+                <ul>
+                  <li
+                    class="me-1 after:content-[','] inline-flex items-center text-sm text-gray-800">
+                    Super Monster
+                  </li>
+                  <li
+                    class="me-1 inline-flex items-center text-sm text-gray-800">
+                    Big Mosnter
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </div>
+          <!-- End List -->
+        </div>
+      </div>
+      <!-- End Content -->
+
+      <!-- Sidebar -->
+      <div
+        class="lg:col-span-1 lg:w-full lg:h-full lg:bg-gradient-to-r lg:from-gray-50 lg:via-transparent lg:to-transparent">
+        <div class="sticky top-0 start-0 py-8 lg:ps-8">
+          <!-- Avatar Media -->
+          <div class="group flex items-center gap-x-3 border-b border-gray-200 pb-8 mb-8">
+            <a class="block shrink-0 focus:outline-none" href="#">
+              <img class="size-10 rounded-full" src="../assets/img/dalimos.webp" alt="Avatar">
+            </a>
+
+            <a class="group grow block focus:outline-none" href="">
+              <h5
+                class="group-hover:text-gray-600 group-focus:text-gray-600 text-sm font-semibold text-gray-800">
+                Delimonster
+              </h5>
+              <p class="text-sm text-gray-500">
+                Facebook
+              </p>
+            </a>
+
+            <div class="grow">
+              <div class="flex justify-end">
+                <a target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452" type="button"
+                  class=" cursor-pointer py-1.5 px-2.5 inline-flex items-center gap-x-2 text-xs font-medium rounded-lg border border-transparent bg-blue-600 text-white hover:bg-blue-700 focus:outline-none focus:bg-blue-700 disabled:opacity-50 disabled:pointer-events-none">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" style="fill: rgb(255, 255, 255);transform: ;msFilter:;"><path d="M20.26 7.8a4.82 4.82 0 0 0-3.93-2.44 3.91 3.91 0 0 0-2.54 1.09 10.58 10.58 0 0 0-1.52 1.71 11 11 0 0 0-1.63-1.72 4.39 4.39 0 0 0-2.88-1.08A5 5 0 0 0 3.7 8 11.49 11.49 0 0 0 2 14a7 7 0 0 0 .18 1.64A4.44 4.44 0 0 0 2.71 17a3.23 3.23 0 0 0 3 1.6c1.25 0 2.19-.56 3.3-2a26.4 26.4 0 0 0 2.21-3.6l.63-1.12c.06-.09.11-.18.16-.27l.15.25 1.79 3A14.77 14.77 0 0 0 16 17.63a3.38 3.38 0 0 0 2.55 1 3 3 0 0 0 2.54-1.23 2.2 2.2 0 0 0 .18-.28 4.1 4.1 0 0 0 .31-.63l.12-.35A6.53 6.53 0 0 0 22 15a9 9 0 0 0 0-1 11.15 11.15 0 0 0-1.74-6.2zm-10.12 3.56c-.64 1-1.57 2.51-2.37 3.61-1 1.37-1.51 1.51-2.07 1.51a1.29 1.29 0 0 1-1.15-.66 3.3 3.3 0 0 1-.39-1.7A9.74 9.74 0 0 1 5.54 9a2.8 2.8 0 0 1 2.19-1.47A3 3 0 0 1 10 8.74a14.07 14.07 0 0 1 1 1.31zm8.42 5.12c-.48 0-.85-.19-1.38-.83A34.87 34.87 0 0 1 14.82 12l-.52-.86c-.36-.61-.71-1.16-1-1.65a2.46 2.46 0 0 1 .17-.27c.94-1.39 1.77-2.17 2.8-2.17a3.12 3.12 0 0 1 2.49 1.66 10.17 10.17 0 0 1 1.37 5.34c-.04 1.31-.34 2.43-1.57 2.43z"></path></svg>
+                  Ver Perfil
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- End Avatar Media -->
+
+          <!-- Image Grid -->
+          <div class="grid grid-cols-2 sm:grid-cols-3 gap-2">
+            <a target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452" class="group block relative overflow-hidden rounded-lg">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
+                src="https://scontent.feoh12-1.fna.fbcdn.net/v/t39.30808-6/439071812_122143509008205233_6276849081544191210_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHWEDqTFRzjZx3oIeo3QmUHWQ-ICwbRrPRZD4gLBtGs9OJPwZCnG2jIYd3oVP6WYvchoCuIGSHEsQB4-SxdIiiA&_nc_ohc=-sLwyXpTLskQ7kNvgGWxKGq&_nc_zt=23&_nc_ht=scontent.feoh12-1.fna&oh=00_AYDqKp6OD1WL8-kpNgZnyKcus-3nNzmgU2MbyoAznswoWg&oe=66D28F12"
+                alt="Project">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">Ver</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="group block relative overflow-hidden rounded-lg" target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg "
+                src="https://scontent.feoh12-1.fna.fbcdn.net/v/t39.30808-6/456208391_122174319044205233_2801779215286276024_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEg7nTywsYEtg__u8dX7DUc-auy4HAAKxb5q7LgcAArFhDE_4tuMc91XFtgv-qWhbthfozMan8v1M2cD2xXt3AG&_nc_ohc=Oc16WjeA7GcQ7kNvgFFG8RF&_nc_zt=23&_nc_ht=scontent.feoh12-1.fna&oh=00_AYAHIZp3MYxaKVVWEOyWuJ-zmaFZBojzCJMnylHb_KRjOw&oe=66D2842E"
+                alt="Project">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">Ver</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="group block relative overflow-hidden rounded-lg" target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
+                src="https://scontent.feoh12-2.fna.fbcdn.net/v/t39.30808-6/456142418_122174318954205233_2325562824942353186_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGpxcRvgQ40KJHSztYxJoiAPUDgzvvuNzA9QODO--43MPrg1koryou5y90MMUzjwOGjQu96YjLU_n5XcRSeQGFR&_nc_ohc=beYkT30tU7gQ7kNvgGKGipt&_nc_zt=23&_nc_ht=scontent.feoh12-2.fna&oh=00_AYA9rZZ4vO9VLoEb0DmdDInEKk1Ndn7pLRLiuqM-bQB8Yg&oe=66D2AB02"
+                alt="Project">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">Ver</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="group block relative overflow-hidden rounded-lg" target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
+                src="https://scontent.feoh12-1.fna.fbcdn.net/v/t39.30808-6/453092570_122169002408205233_3486762190699694422_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHD-VScJDxuv-FzojG5x4W6YhkdqK9NHNNiGR2or00c0-fXOaQKrFWWtl23Dad-E_WMGzTJ9-HU8SS3DZulmaVz&_nc_ohc=fZkJ21Y3uE8Q7kNvgGMHwSJ&_nc_zt=23&_nc_ht=scontent.feoh12-1.fna&oh=00_AYCG91gscMz4k0DA5krqda2rsb60sZu5OkBsdXmw0UibbA&oe=66D29EC7"
+                alt="Project">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">Ver</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="group block relative overflow-hidden rounded-lg" target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
+                src="https://scontent.feoh12-2.fna.fbcdn.net/v/t39.30808-6/453505018_122169002336205233_2380360949714804856_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeH01DmuLnALdtAHpVaQ6UKIASnOdBPKPpwBKc50E8o-nPto5ibadhuJvhpJMr9XNtGoS5mI53-AdtANqQq4UZhj&_nc_ohc=8bBm-hs0USYQ7kNvgFsMJFn&_nc_zt=23&_nc_ht=scontent.feoh12-2.fna&oh=00_AYAr8AbRSTvdj4X7tMznPZBaxko_1hzK5DOdFSG8w-pYSQ&oe=66D28C73"
+                alt="Project">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">Ver</span>
+                </div>
+              </div>
+            </a>
+
+            <a class="group block relative overflow-hidden rounded-lg" target="_blank" href="https://web.facebook.com/profile.php?id=61556157003452">
+              <img class="w-full size-40 object-cover bg-gray-100 rounded-lg"
+                src="https://scontent.feoh12-2.fna.fbcdn.net/v/t39.30808-6/450891137_122165518214205233_8047511427314104264_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHnQ0-eS8ZZAUtmL5LXAPs5jjDfGX53WO-OMN8ZfndY7zjpt9Kw-FMPuoqz4vin8SE7PtzYy4bUYsJ__e1WfcIm&_nc_ohc=tJU1xFruVAUQ7kNvgFWlUqv&_nc_zt=23&_nc_ht=scontent.feoh12-2.fna&oh=00_AYCrqn3aML1idk9XqlYc4mYQPtMZZ5zArn4QC_e3LJsLLA&oe=66D2896B"
+                alt="Project">
+              <div class="absolute bottom-1 end-1 opacity-0 group-hover:opacity-100 transition">
+                <div
+                  class="flex items-center gap-x-1 py-1 px-2 bg-white border border-gray-200 text-gray-800 rounded-lg">
+                  <svg class="shrink-0 size-3" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                    stroke-linejoin="round">
+                    <circle cx="11" cy="11" r="8" />
+                    <path d="m21 21-4.3-4.3" />
+                  </svg>
+                  <span class="text-xs">Ver</span>
+                </div>
+              </div>
+            </a>
+          </div>
+
+        </div>
+      </div>
+      <!-- End Sidebar -->
+    </div>
+  </div>
+  <!-- End Blog Article -->
+
+</body>
+<script>
+  function openImage(imgElement) {
+    const modal = document.getElementById('imageModal');
+    const modalImage = document.getElementById('modalImage');
+    modalImage.src = imgElement.src;
+    modal.classList.remove('hidden');
+  }
+
+  function closeImage() {
+    const modal = document.getElementById('imageModal');
+    modal.classList.add('hidden');
+  }
+</script>
+
+</html>

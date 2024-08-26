@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parchate Aparatadó</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+</head>
+
+<body style="font-family:'Poppins', sans-serif ;">
+    <!-- ========== Menu de navegación========== -->
+    <header class="sticky top-0 inset-x-0 flex flex-wrap md:justify-start md:flex-nowrap z-50 w-full text-sm">
+        <nav
+            class="mt-4 relative max-w-2xl w-full bg-white border border-gray-200 rounded-[2rem] mx-2 py-2.5 md:flex md:items-center md:justify-between md:py-0 md:px-4 md:mx-auto">
+            <div class="px-4 md:px-0 flex justify-between items-center">
+                <!-- Logo -->
+                <div>
+                    <a class="flex-none rounded-md text-xl inline-block font-semibold focus:outline-none focus:opacity-80"
+                        href="" aria-label="Preline">
+                        <img src="./assets/img/2.webp" class="w-28 lg:w-40 md:w-32 h-auto" alt="">
+                    </a>
+                </div>
+                <!-- End Logo -->
+
+                <div class="md:hidden">
+                    <!-- Toggle Button -->
+                    <button type="button"
+                        class="hs-collapse-toggle flex justify-center items-center size-6 border border-gray-200 text-gray-500 rounded-full hover:bg-gray-200 focus:outline-none focus:bg-gray-200 "
+                        id="hs-navbar-header-floating-collapse" aria-expanded="false"
+                        aria-controls="hs-navbar-header-floating" aria-label="Toggle navigation"
+                        data-hs-collapse="#hs-navbar-header-floating">
+                        <svg class="hs-collapse-open:hidden shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" x2="21" y1="6" y2="6" />
+                            <line x1="3" x2="21" y1="12" y2="12" />
+                            <line x1="3" x2="21" y1="18" y2="18" />
+                        </svg>
+                        <svg class="hs-collapse-open:block hidden shrink-0 size-4" xmlns="http://www.w3.org/2000/svg"
+                            width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M18 6 6 18" />
+                            <path d="m6 6 12 12" />
+                        </svg>
+                    </button>
+                    <!-- End Toggle Button -->
+                </div>
+            </div>
+
+            <div id="hs-navbar-header-floating"
+                class="hidden hs-collapse overflow-hidden transition-all duration-300 basis-full grow md:block"
+                aria-labelledby="hs-navbar-header-floating-collapse">
+                <div
+                    class="flex flex-col md:flex-row md:items-center md:justify-end gap-2 md:gap-3 mt-3 md:mt-0 py-2 md:py-0 md:ps-7">
+                    <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2  font-medium text-gray-800 border-gray-800 focus:outline-none"
+                        href="./index.html" aria-current="page">Inicio</a>
+                    <a class="py-0.5 md:py-3 px-4 md:px-1 border-s-2 md:border-s-0 md:border-b-2 border-transparent text-gray-500 hover:text-gray-800 focus:outline-none "
+                        href="./contacto.html">Contacto</a>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <!-- ==========Final menu de navegación========== -->
+
+    <!-- ========== Presentación principal ========== -->
+    <div class="bg-white">
+        <div class="relative isolate px-6 pt-14 lg:px-8">
+            <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#059049] to-[#fcbf8d] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+            <div class="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
+                <div class="hidden sm:mb-8 sm:flex sm:justify-center">
+                    <div
+                        class="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        Más de 500 lugares por visitar. <a href="#" class="font-semibold text-emerald-600"><span
+                                class="absolute inset-0" aria-hidden="true"></span>¡Quiero verlos!<span
+                                aria-hidden="true">&rarr;</span></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <h1 class="text-4xl font-bold tracking-tight text-emerald-800 sm:text-7xl">Parchate en Aparatadó
+                    </h1>
+                    <p class="mt-6 text-lg leading-8 text-gray-600">Descubre los lugares más top y vibrantes de nuestro
+                        municipio aquí, pácela bueno con los parceros, el tío, la tía y toda la familia.
+                    </p>
+                    <div class="mt-10 flex items-center justify-center gap-x-6">
+                        <a href="#"
+                            class="text-white w-fit bg-emerald-800 transform transition-all duration-300 focus:outline-none font-medium rounded-full text-sm px-12 py-4 text-center shadow-sm hover:bg-emerald-700 hover:shadow-emerald hover:scale-105 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-600">¡Tengo
+                            un lugar!</a>
+                    </div>
+                </div>
+            </div>
+            <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                aria-hidden="true">
+                <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#005947] to-[#00d49a] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========== Fin presentación principal ========== -->
+
+    <!-- ========== Opciones ========== -->
+    <div class="z-10 max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 items-center gap-6">
+            <!-- Card -->
+            <a class="z-30 group flex gap-y-6 size-full hover:bg-gray-100/30 focus:outline-none focus:bg-gray-100 rounded-lg p-5 "
+                href="./comidas.html">
+                <svg class="shrink-0 size-10 text-gray-800 mt-0.5 me-6 " xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter">
+                    <path
+                        d="M7 19.66V21a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1.34A10 10 0 0 0 22 11a1 1 0 0 0-1-1 3.58 3.58 0 0 0-1.8-3 3.66 3.66 0 0 0-3.63-3.13 3.86 3.86 0 0 0-1 .13 3.7 3.7 0 0 0-5.11 0 3.86 3.86 0 0 0-1-.13A3.66 3.66 0 0 0 4.81 7 3.58 3.58 0 0 0 3 10a1 1 0 0 0-1 1 10 10 0 0 0 5 8.66zm-.89-11 .83-.26-.16-.9a1.64 1.64 0 0 1 1.66-1.62 1.78 1.78 0 0 1 .83.2l.81.45.5-.77a1.71 1.71 0 0 1 2.84 0l.5.77.81-.45a1.78 1.78 0 0 1 .83-.2 1.65 1.65 0 0 1 1.67 1.6l-.16.85.82.28A1.59 1.59 0 0 1 19 10H5a1.59 1.59 0 0 1 1.11-1.39zM19.94 12a8 8 0 0 1-4.39 6.16 1 1 0 0 0-.55.9V20H9v-.94a1 1 0 0 0-.55-.9A8 8 0 0 1 4.06 12z">
+                    </path>
+                </svg>
+                <div>
+                    <div>
+                        <h3 class="block font-bold text-gray-800">COMIDA</h3>
+                        <p class="text-gray-600 ">
+                            Descubre desde comidas rápidas hasta restaurantes finos.</p>
+                    </div>
+
+                    <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 ">
+                        Descubrir
+                        <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </p>
+                </div>
+            </a>
+            <!-- End Card -->
+
+            <!-- Card -->
+            <a class="z-30 group flex gap-y-6 size-full hover:bg-gray-100/30 focus:outline-none focus:bg-gray-100 rounded-lg p-5 "
+                href="#">
+                <svg class="shrink-0 size-8 text-gray-800 mt-0.5 me-6 " xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                    stroke-linecap="round" stroke-linejoin="round">
+                    <path d="m2 7 4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7" />
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <path d="M15 22v-4a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v4" />
+                    <path d="M2 7h20" />
+                    <path
+                        d="M22 7v3a2 2 0 0 1-2 2v0a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 16 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 12 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 8 12a2.7 2.7 0 0 1-1.59-.63.7.7 0 0 0-.82 0A2.7 2.7 0 0 1 4 12v0a2 2 0 0 1-2-2V7" />
+                </svg>
+
+                <div>
+                    <div>
+                        <h3 class="block font-bold text-gray-800">PARCHES</h3>
+                        <p class="text-gray-600">Desde saborear un granizado hasta compartir una
+                            tarde con amigos.</p>
+                    </div>
+
+                    <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800 ">
+                        Descubrir
+                        <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+                    </p>
+                </div>
+            </a>
+            <!-- End Card -->
+
+            <!-- Card -->
+            <a class="z-30 group flex gap-y-6 size-full hover:bg-gray-100/30 focus:outline-none focus:bg-gray-100 rounded-lg p-5"
+                href="#">
+                <svg class="shrink-0 size-10 text-gray-800 mt-0.5 me-6" xmlns="http://www.w3.org/2000/svg" width="24"
+                    height="24" viewBox="0 0 24 24" style="fill: rgba(0, 0, 0, 1);transform: msFilter">
+                    <path
+                        d="m21.88 2.15-1.2.4a13.84 13.84 0 0 1-6.41.64 11.87 11.87 0 0 0-6.68.9A7.23 7.23 0 0 0 3.3 9.5a8.65 8.65 0 0 0 1.47 6.6c-.06.21-.12.42-.17.63A22.6 22.6 0 0 0 4 22h2a30.69 30.69 0 0 1 .59-4.32 9.25 9.25 0 0 0 4.52 1.11 11 11 0 0 0 4.28-.87C23 14.67 22 3.86 22 3.41zm-7.27 13.93c-2.61 1.11-5.73.92-7.48-.45a13.79 13.79 0 0 1 1.21-2.84A10.17 10.17 0 0 1 9.73 11a9 9 0 0 1 1.81-1.42A12 12 0 0 1 16 8V7a11.43 11.43 0 0 0-5.26 1.08 10.28 10.28 0 0 0-4.12 3.65 15.07 15.07 0 0 0-1 1.87 7 7 0 0 1-.38-3.73 5.24 5.24 0 0 1 3.14-4 8.93 8.93 0 0 1 3.82-.84c.62 0 1.23.06 1.87.11a16.2 16.2 0 0 0 6-.35C20 7.55 19.5 14 14.61 16.08z">
+                    </path>
+                </svg>
+                <div>
+                    <div>
+                        <h3 class="block font-bold text-gray-800">DESCANSAR</h3>
+                        <p class="text-gray-600 ">Desconecta y recarga energias con estos
+                            acogedores lugares.</p>
+                    </div>
+
+                    <p class="mt-3 inline-flex items-center gap-x-1 text-sm font-semibold text-gray-800">
+                        Descubrir
+                        <svg class="shrink-0 size-4 transition ease-in-out group-hover:translate-x-1 group-focus:translate-x-1"
+                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="m9 18 6-6-6-6" />
+                        </svg>
+
+                    </p>
+                </div>
+            </a>
+            <!-- End Card -->
+        </div>
+    </div>
+    <!-- End Icon Blocks -->
+    <!-- ========== Fin opciones ========== -->
+
+    <!-- ========== Lugar destacado ========== -->
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <!-- Grid -->
+        <div class="lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+            <div class="lg:col-span-7">
+                <!-- Grid -->
+                <div class="grid grid-cols-12 gap-2 sm:gap-6 items-center lg:-translate-x-10">
+                    <div class="absolute inset-x-0 -top-40 -z-10 transform-gpu overflow-hidden blur-3xl sm:-top-80"
+                        aria-hidden="true">
+                        <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#059049] to-[#a5ffb4aa] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                        </div>
+                    </div>
+                    <div class="col-span-4 border-emerald-400 border-solid border-[2px] rounded-xl">
+                        <img class="rounded-xl p-[.3rem]" src="./assets/img/amauz3.webp" alt="Features Image">
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-span-3 border-emerald-400 border-solid border-[2px] rounded-xl">
+                        <img class="rounded-xl p-[.3rem]" src="./assets/img/amauz2.webp" alt="Features Image">
+                    </div>
+                    <!-- End Col -->
+
+                    <div class="col-span-5 border-emerald-400 border-solid border-[2px] rounded-xl">
+                        <img class="rounded-xl p-[.3rem]" src="./assets/img/amauz.webp" alt="Features Image">
+                    </div>
+                    <div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+                        aria-hidden="true">
+                        <div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#005947] to-[#00d49a] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                            style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+                        </div>
+                    </div>
+                    <!-- End Col -->
+                </div>
+                <!-- End Grid -->
+            </div>
+            <!-- End Col -->
+
+            <div class="mt-5 sm:mt-10 lg:mt-0 lg:col-span-5">
+                <div class="space-y-6 sm:space-y-8">
+                    <!-- Title -->
+                    <div class="space-y-2 md:space-y-4">
+                        <a href="#" class="font-bold text-3xl lg:text-4xl text-emerald-800 ">
+                            AMAUZ RESTAURANTE
+                        </a>
+                        <p class="text-gray-500 ">
+                            Un espacio muy agradable para disfrutar una cena con amigos y/o familia. Prestan un
+                            excelente servicio y la comida siempre con buena presentación y buen sabor
+                        </p>
+                    </div>
+                    <!-- End Title -->
+
+                    <!-- List -->
+                    <ul class="space-y-2 sm:space-y-4">
+                        <li class="flex gap-x-3">
+                            <span
+                                class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-emerald-50 text-emerald-600">
+                                <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <div class="grow">
+                                <span class="text-sm sm:text-base text-gray-500 ">
+                                    <span class="font-bold">Buen sabor</span> – variedad de platos
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="flex gap-x-3">
+                            <span
+                                class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-emerald-50 text-emerald-600">
+                                <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <div class="grow">
+                                <span class="text-sm sm:text-base text-gray-500">
+                                    Buena atención al cliente
+                                </span>
+                            </div>
+                        </li>
+
+                        <li class="flex gap-x-3">
+                            <span
+                                class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-emerald-50 text-emerald-600">
+                                <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                    viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg>
+                            </span>
+                            <div class="grow">
+                                <span class="text-sm sm:text-base text-gray-500">
+                                    Precios accesibles para <span class="font-bold">todos</span>
+                                </span>
+                            </div>
+                        </li>
+                    </ul>
+                    <!-- End List -->
+                </div>
+            </div>
+            <!-- End Col -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Features -->
+
+    <!-- ========== Fin lugar destacado ========== -->
+
+
+    <!-- ========== Evenetos y promociones ========== -->
+    <!-- Card Blog -->
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+
+        <h2
+            class="mx-5 mb-2 text-center text-[1.5rem] font-bold leading-none tracking-tight text-emerald-500 opacity-50 md:text-[1.875rem] lg:text-[2.25rem]">
+            Eventos y promociones</h2>
+        <p
+            class="w-[90%] md:w-[60%] text-gray-950/70 m-auto text-center mb-10 text-[.9rem] md:text-[1rem] lg:text-[1.1rem]">
+            Mantente atento para no perderte ninguna oportunidad de ser el próximo afortunado ganador.
+        </p>
+        <!-- Grid -->
+        <div class="grid lg:grid-cols-3 gap-3">
+
+            <!-- Card -->
+            <section class="group relative block rounded-xl focus:outline-none">
+                <div
+                    class="shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-emerald-950/95 before:to-emerald-950/90">
+                    <img class="size-full absolute top-0 start-0 object-cover" src="./assets/img/fh.webp"
+                        alt="Blog Image">
+                </div>
+
+
+
+                <div class="absolute top-0 inset-x-0 z-10">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <!-- Avatar -->
+                        <div class="flex items-center">
+                            <div class="shrink-0">
+                                <img class="size-[46px] border-2 border-white rounded-full"
+                                    src="./assets/img/misrizos.jpg" alt="Avatar">
+                            </div>
+                            <div class="ms-2.5 sm:ms-4">
+                                <h4 class="font-semibold text-white">
+                                    Miz Rizos
+                                </h4>
+                                <p class="text-xs text-white/80">
+                                    Jan 09, 2021
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End Avatar -->
+                    </div>
+                </div>
+
+                <div class="absolute bottom-0 inset-x-0 z-10">
+
+                    <div class="flex flex-col h-full p-4 sm:p-6">
+                        <span
+                            class="w-fit bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Productos</span>
+                        <h3
+                            class="text-lg sm:text-3xl font-semibold text-white">
+                            Super Sorteo
+                        </h3>
+                        <p class="mt-2 text-white/80">
+                            Participa por este súper premio que traigo para ti, solo debes seguir 3 sencillos pa...
+
+                        </p>
+                        <a href="#"
+                            class="text-white w-fit bg-emerald-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4 transform transition-all duration-300 hover:bg-emerald-700 hover:shadow-emerald hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style=" margin-right:10px; fill: rgb(255, 255, 255);transform: msFilter">
+                                <path
+                                    d="M19 13.586V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v3.586l-1.707 1.707A.996.996 0 0 0 3 16v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2a.996.996 0 0 0-.293-.707L19 13.586zM19 17H5v-.586l1.707-1.707A.996.996 0 0 0 7 14v-4c0-2.757 2.243-5 5-5s5 2.243 5 5v4c0 .266.105.52.293.707L19 16.414V17zm-7 5a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22z">
+                                </path>
+                            </svg>
+                            Participar
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- End Card -->
+
+            <section class="group relative block rounded-xl focus:outline-none">
+                <div
+                    class="shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-orange-950/95 before:to-orange-950/90">
+                    <img class="size-full absolute top-0 start-0 object-cover" src="./assets/img/4.webp"
+                        alt="Blog Image">
+                </div>
+
+
+
+                <div class="absolute top-0 inset-x-0 z-10">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <!-- Avatar -->
+                        <div class="flex items-center">
+                            <div class="shrink-0">
+                                <img class="size-[46px] border-2 border-white rounded-full"
+                                    src="./assets/img/lodelabencion.jpg" alt="Avatar">
+                            </div>
+                            <div class="ms-2.5 sm:ms-4">
+                                <h4 class="font-semibold text-white">
+                                    Los de la bendición
+                                </h4>
+                                <p class="text-xs text-white/80">
+                                    Jan 09, 2021
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End Avatar -->
+                    </div>
+                </div>
+
+                <div class="absolute bottom-0 inset-x-0 z-10">
+
+                    <div class="flex flex-col h-full p-4 sm:p-6">
+                        <span
+                            class="w-fit bg-orange-100 text-orange-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Productos</span>
+                        <h3
+                            class="text-lg sm:text-3xl font-semibold text-white">
+                            Sorteo Flash
+                        </h3>
+                        <p class="mt-2 text-white/80">
+                            Ganate una cajita de Butis x 25 unidades + bollo, seviche, salpimienta y limón.😋
+                        </p>
+                        <a href="#"
+                            class="text-white w-fit bg-orange-800 font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4 transform transition-all duration-300 hover:bg-orange-700 hover:shadow-orange hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style=" margin-right:10px; fill: rgb(255, 255, 255);transform: msFilter">
+                                <path
+                                    d="M19 13.586V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v3.586l-1.707 1.707A.996.996 0 0 0 3 16v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2a.996.996 0 0 0-.293-.707L19 13.586zM19 17H5v-.586l1.707-1.707A.996.996 0 0 0 7 14v-4c0-2.757 2.243-5 5-5s5 2.243 5 5v4c0 .266.105.52.293.707L19 16.414V17zm-7 5a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22z">
+                                </path>
+                            </svg>
+                            Participar
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- End Card -->
+
+            <section class="group relative block rounded-xl focus:outline-none">
+                <div
+                    class="shrink-0 relative rounded-xl overflow-hidden w-full h-[350px] before:absolute before:inset-x-0 before:z-[1] before:size-full before:bg-gradient-to-t before:from-emerald-950/95 before:to-emerald-950/90">
+                    <img class="size-full absolute top-0 start-0 object-cover" src="./assets/img/fh.webp"
+                        alt="Blog Image">
+                </div>
+
+
+
+                <div class="absolute top-0 inset-x-0 z-10">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <!-- Avatar -->
+                        <div class="flex items-center">
+                            <div class="shrink-0">
+                                <img class="size-[46px] border-2 border-white rounded-full"
+                                    src="./assets/img/misrizos.jpg" alt="Avatar">
+                            </div>
+                            <div class="ms-2.5 sm:ms-4">
+                                <h4 class="font-semibold text-white">
+                                    Miz Rizos
+                                </h4>
+                                <p class="text-xs text-white/80">
+                                    Jan 09, 2021
+                                </p>
+                            </div>
+                        </div>
+                        <!-- End Avatar -->
+                    </div>
+                </div>
+
+                <div class="absolute bottom-0 inset-x-0 z-10">
+
+                    <div class="flex flex-col h-full p-4 sm:p-6">
+                        <span
+                            class="w-fit bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full">Productos</span>
+                        <h3
+                            class="text-lg sm:text-3xl font-semibold text-white">
+                            Super Sorteo
+                        </h3>
+                        <p class="mt-2 text-white/80">
+                            Participa por este súper premio que traigo para ti, solo debes seguir 3 sencillos pa...
+
+                        </p>
+                        <a href="#"
+                            class="text-white w-fit bg-emerald-800 focus:outline-none font-medium rounded-full text-sm px-5 py-2.5 text-center inline-flex items-center me-2 mb-2 mt-4 transform transition-all duration-300 hover:bg-emerald-700 hover:shadow-emerald hover:scale-105">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                style=" margin-right:10px; fill: rgb(255, 255, 255);transform: msFilter">
+                                <path
+                                    d="M19 13.586V10c0-3.217-2.185-5.927-5.145-6.742C13.562 2.52 12.846 2 12 2s-1.562.52-1.855 1.258C7.185 4.074 5 6.783 5 10v3.586l-1.707 1.707A.996.996 0 0 0 3 16v2a1 1 0 0 0 1 1h16a1 1 0 0 0 1-1v-2a.996.996 0 0 0-.293-.707L19 13.586zM19 17H5v-.586l1.707-1.707A.996.996 0 0 0 7 14v-4c0-2.757 2.243-5 5-5s5 2.243 5 5v4c0 .266.105.52.293.707L19 16.414V17zm-7 5a2.98 2.98 0 0 0 2.818-2H9.182A2.98 2.98 0 0 0 12 22z">
+                                </path>
+                            </svg>
+                            Participar
+                        </a>
+                    </div>
+                </div>
+            </section>
+            <!-- End Card -->
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Card Blog -->
+    <!-- ========== Fin eventos y promociones ========== -->
+
+
+    <!-- ========== Nuevos emprendiemientos ========== -->
+    <h2
+        class="mx-5 mb-2 text-center text-[1.5rem] font-bold leading-none tracking-tight text-emerald-500 opacity-50 md:text-[1.875rem] lg:text-[2.25rem]">
+        ¡Nuevos empredimientos!</h2>
+    <p
+        class="w-[90%] md:w-[60%] text-gray-950/70 m-auto text-center mb-10 text-[.9rem] md:text-[1rem] lg:text-[1.1rem]">
+        Apoya a los nuevos emprendimientos y descubre innovación y calidad mientras impulsas el crecimiento local.</p>
+
+    <!-- Card Blog -->
+    <div class="max-w-[85rem] px-4 sm:px-6 lg:px-8  mx-auto">
+        <!-- Grid -->
+        <div class="grid lg:grid-cols-2 gap-6">
+            <!-- Card -->
+            <a class="group sm:flex rounded-xl focus:outline-none" href="#">
+                <div class="shrink-0 relative rounded-xl overflow-hidden h-[200px] sm:w-[250px] sm:h-[350px] w-full">
+                    <img class="size-full absolute top-0 start-0 object-cover"
+                        src="./assets/img/Arepas extra chesse Apartado.webp" alt="Blog Image">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent"></div>
+                </div>
+
+                <div class="grow">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <div class="mb-3">
+                            <p
+                                class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                PARCHES
+                            </p>
+                        </div>
+                        <h3
+                            class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-emerald-600 group-focus:text-emerald-600 ">
+                            Arepas Extra Chesse
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Aquí, cada arepa es una obra maestra, rebosante de queso fundido y preparado con
+                            ingredientes frescos y de calidad.
+                        </p>
+
+                        <div class="mt-5 sm:mt-auto">
+                            <!-- Avatar -->
+                            <div class="flex items-center">
+                                <div class="shrink-0">
+                                    <img class="size-[46px] object-cover object-center rounded-full"
+                                        src="./assets/img/logo-arepas.webp" alt="Avatar">
+                                </div>
+                                <div class="ms-2.5 sm:ms-4">
+                                    <h4 class="font-semibold text-gray-800 ">
+                                        Yesica Tobon
+                                    </h4>
+                                    <p class="text-xs text-gray-500">
+                                        Abril, 2024
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End Avatar -->
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- End Card -->
+
+            <!-- Card -->
+            <a class="group sm:flex rounded-xl focus:outline-none" href="#">
+                <div class="shrink-0 relative rounded-xl overflow-hidden h-[200px] sm:w-[250px] sm:h-[350px] w-full">
+                    <img class="size-full absolute top-0 start-0 object-cover" src="./assets/img/drinks.webp"
+                        alt="Blog Image">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/80 to-transparent"></div>
+                </div>
+                <div class="grow">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <div class="mb-3">
+                            <p
+                                class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                PARCHES
+                            </p>
+                        </div>
+                        <h3
+                            class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-emerald-600 group-focus:text-emerald-600">
+                            Drink Cheladas
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Somos especialistas en crear las bebidas más refrescantes y deliciosas para todos los
+                            gustos. Ofrecemos una variedad de micheladas personalizadas y sodas artesanales que te harán
+                            disfrutar cada sorbo.
+                        </p>
+
+                        <div class="mt-5 sm:mt-auto">
+                            <!-- Avatar -->
+                            <div class="flex items-center">
+                                <div class="shrink-0">
+                                    <img class="size-[46px] object-cover object-center rounded-full"
+                                        src="./assets/img/leymer.jpg" alt="Avatar">
+                                </div>
+                                <div class="ms-2.5 sm:ms-4">
+                                    <h4 class="font-semibold text-gray-800">
+                                        Leymer Corcho
+                                    </h4>
+                                    <p class="text-xs text-gray-500">
+                                        Febrero, 2024
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End Avatar -->
+                        </div>
+                    </div>
+                </div>
+            </a>
+
+            <a class="group sm:flex rounded-xl focus:outline-none" href="#">
+                <div class="shrink-0 relative rounded-xl overflow-hidden h-[200px] sm:w-[250px] sm:h-[350px] w-full">
+                    <img class="size-full absolute top-0 start-0 object-cover" src="./assets/img/los-de-la-ben.webp"
+                        alt="Blog Image">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent"></div>
+                </div>
+
+                <div class="grow">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <div class="mb-3">
+                            <p
+                                class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                PARCHES
+                            </p>
+                        </div>
+                        <h3
+                            class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-emerald-600 group-focus:text-emerald-600">
+                            Los de la bendición.
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Rincón donde la tradición y el sabor auténtico cobran vida, En este emprendimiento, nos
+                            especializamos en las irresistibles butifarras, esas pequeñas explosiones de sabor que te
+                            transportan directamente a tu infancia.
+                        </p>
+
+                        <div class="mt-5 sm:mt-auto">
+                            <!-- Avatar -->
+                            <div class="flex items-center">
+                                <div class="shrink-0">
+                                    <img class="size-[46px] object-cover object-center rounded-full"
+                                        src="./assets/img/lodelabencion.jpg" alt="Avatar">
+                                </div>
+                                <div class="ms-2.5 sm:ms-4">
+                                    <h4 class="font-semibold text-gray-800">
+                                        Los de la bendición
+                                    </h4>
+                                    <p class="text-xs text-gray-500">
+                                        Marzo, 2024
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End Avatar -->
+                        </div>
+                    </div>
+                </div>
+            </a>
+            <!-- End Card -->
+
+            <!-- Card -->
+            <a class="group sm:flex rounded-xl focus:outline-none" href="#">
+                <div class="shrink-0 relative rounded-xl overflow-hidden h-[200px] sm:w-[250px] sm:h-[350px] w-full">
+                    <img class="size-full absolute top-0 start-0 object-cover w-full h-full"
+                        src="./assets/img/clubtenisdemes.webp" alt="Blog Image">
+                    <div class="absolute inset-0 bg-gradient-to-t from-emerald-900/60 to-transparent"></div>
+                </div>
+
+                <div class="grow">
+                    <div class="p-4 flex flex-col h-full sm:p-6">
+                        <div class="mb-3">
+                            <p
+                                class="inline-flex items-center gap-1.5 py-1.5 px-3 rounded-md text-xs font-medium bg-gray-100 text-gray-800">
+                                PARCHES
+                            </p>
+                        </div>
+                        <h3
+                            class="text-lg sm:text-2xl font-semibold text-gray-800 group-hover:text-emerald-600 group-focus:text-emerald-600">
+                            Club de Tenis de Mesa Úraba
+                        </h3>
+                        <p class="mt-2 text-gray-600">
+                            Diseñado para jugadores de todos los niveles, desde principiantes hasta expertos, nuestro
+                            club ofrece un espacio dinámico y lleno de energía donde cada golpe cuenta.
+                        </p>
+
+                        <div class="mt-5 sm:mt-auto">
+                            <!-- Avatar -->
+                            <div class="flex items-center">
+                                <div class="shrink-0">
+                                    <img class="size-[46px] object-cover object-center rounded-full"
+                                        src="./assets/img/logotenis.webp" alt="Avatar">
+                                </div>
+                                <div class="ms-2.5 sm:ms-4">
+                                    <h4 class="font-semibold text-gray-800">
+                                        Elkin Peñata
+                                    </h4>
+                                    <p class="text-xs text-gray-500">
+                                        Febrero, 2024
+                                    </p>
+                                </div>
+                            </div>
+                            <!-- End Avatar -->
+                        </div>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <!-- End Grid -->
+    </div>
+    <!-- End Card Blog -->
+    <!-- ========== Fin nuevos emprendiemientos ========== -->
+
+
+    <!-- ========== Descubre la magia de Uraba ========== -->
+    <!-- Features -->
+    <div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+        <div class="relative p-6 md:p-16">
+            <!-- Grid -->
+            <div class="relative z-10 lg:grid lg:grid-cols-12 lg:gap-16 lg:items-center">
+                <div class="mb-10 lg:mb-0 lg:col-span-6 lg:col-start-8 lg:order-2">
+                    <h2 class="text-2xl text-emerald-800 font-bold sm:text-5xl">
+                        ¡Descubre la magia de Uraba!
+                    </h2>
+
+                    <!-- Tab Navs -->
+                    <nav class="grid gap-4 mt-5 md:mt-10" aria-label="Tabs" role="tablist" aria-orientation="vertical">
+                        <button type="button"
+                            class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700 active"
+                            id="tabs-with-card-item-1" aria-selected="true" data-hs-tab="#tabs-with-card-1"
+                            aria-controls="tabs-with-card-1" role="tab">
+                            <span class="flex gap-x-6">
+                                <svg class="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-amaerlad-600 text-gray-800 dark:hs-tab-active:text-emerald-500 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="M5 5.5A3.5 3.5 0 0 1 8.5 2H12v7H8.5A3.5 3.5 0 0 1 5 5.5z" />
+                                    <path d="M12 2h3.5a3.5 3.5 0 1 1 0 7H12V2z" />
+                                    <path d="M12 12.5a3.5 3.5 0 1 1 7 0 3.5 3.5 0 1 1-7 0z" />
+                                    <path d="M5 19.5A3.5 3.5 0 0 1 8.5 16H12v3.5a3.5 3.5 0 1 1-7 0z" />
+                                    <path d="M5 12.5A3.5 3.5 0 0 1 8.5 9H12v7H8.5A3.5 3.5 0 0 1 5 12.5z" />
+                                </svg>
+                                <span class="grow">
+                                    <span
+                                        class="block text-lg font-semibold hs-tab-active:text-emerald-600 text-gray-800">Días
+                                        de sol</span>
+                                    <span class="block mt-1 text-gray-800">Escapate
+                                        y disfruta de un día maravilloso, sol, mar y arena.</span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button type="button"
+                            class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            id="tabs-with-card-item-2" aria-selected="false" data-hs-tab="#tabs-with-card-2"
+                            aria-controls="tabs-with-card-2" role="tab">
+                            <span class="flex gap-x-6">
+                                <svg class="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-500 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path d="m12 14 4-4" />
+                                    <path d="M3.34 19a10 10 0 1 1 17.32 0" />
+                                </svg>
+                                <span class="grow">
+                                    <span
+                                        class="block text-lg font-semibold hs-tab-active:text-emerald-600 text-gray-800">Glamping
+                                        y cabañas</span>
+                                    <span class="block mt-1 text-gray-800">Combinación
+                                        de comodidad y naturaleza, ideal para una aventura bajo las estellas </span>
+                                </span>
+                            </span>
+                        </button>
+
+                        <button type="button"
+                            class="hs-tab-active:bg-white hs-tab-active:shadow-md hs-tab-active:hover:border-transparent text-start hover:bg-gray-200 focus:outline-none focus:bg-gray-200 p-4 md:p-5 rounded-xl dark:hs-tab-active:bg-neutral-700 dark:hover:bg-neutral-700 dark:focus:bg-neutral-700"
+                            id="tabs-with-card-item-3" aria-selected="false" data-hs-tab="#tabs-with-card-3"
+                            aria-controls="tabs-with-card-3" role="tab">
+                            <span class="flex gap-x-6">
+                                <svg class="shrink-0 mt-2 size-6 md:size-7 hs-tab-active:text-emerald-600 text-gray-800 dark:hs-tab-active:text-emerald-500 dark:text-neutral-200"
+                                    xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                    stroke-linejoin="round">
+                                    <path
+                                        d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+                                    <path d="M5 3v4" />
+                                    <path d="M19 17v4" />
+                                    <path d="M3 5h4" />
+                                    <path d="M17 19h4" />
+                                </svg>
+                                <span class="grow">
+                                    <span
+                                        class="block text-lg font-semibold hs-tab-active:text-emerald-600 text-gray-800">Rios
+                                        y senderos</span>
+                                    <span class="block mt-1 text-gray-800">Explora
+                                        paisajes asombrosos, experimenta actividades emocionantes</span>
+                                </span>
+                            </span>
+                        </button>
+                    </nav>
+                    <!-- End Tab Navs -->
+                </div>
+                <!-- End Col -->
+
+                <div class="lg:col-span-6">
+                    <div class="relative">
+                        <!-- Tab Content -->
+                        <div>
+                            <div id="tabs-with-card-1" role="tabpanel" aria-labelledby="tabs-with-card-item-1">
+                                <img class=" w-full shadow-xl shadow-gray-200 rounded-t-3xl"
+                                    src="./assets/img/capurgana.png" alt="Features Image">
+                                <a class="text-center transform transition-all duration-300 block bg-emerald-900 font-medium hover:shadow-emerald hover:scale-105 hover:rounded-t-3xl hover:bg-emerald-800 text-white rounded-b-3xl decoration-none py-4 w-full m-auto"
+                                    href="#">Explorar Lugares</a>
+                                </img>
+                            </div>
+
+                            <div id="tabs-with-card-2" class="hidden" role="tabpanel"
+                                aria-labelledby="tabs-with-card-item-2">
+                                <img class=" w-full shadow-xl shadow-gray-200 rounded-t-3xl"
+                                    src="./assets/img/Sin-título-_560-x-720-px_.webp" alt="Features Image">
+                                <a class="text-center transform transition-all duration-300 block bg-emerald-900 font-medium hover:shadow-emerald hover:scale-105 hover:rounded-t-3xl hover:bg-emerald-800 text-white rounded-b-3xl decoration-none py-4 w-full m-auto"
+                                    href="#">Explorar Lugares</a>
+                                </img>
+                            </div>
+
+                            <div id="tabs-with-card-3" class="hidden" role="tabpanel"
+                                aria-labelledby="tabs-with-card-item-3">
+                                <img class=" w-full shadow-xl shadow-gray-200 rounded-t-3xl"
+                                    src="./assets/img/rios.webp" alt="Features Image">
+                                <a class="text-center transform transition-all duration-300 block bg-emerald-900 font-medium hover:shadow-emerald hover:scale-105 hover:rounded-t-3xl hover:bg-emerald-800 text-white rounded-b-3xl decoration-none py-4 w-full m-auto"
+                                    href="#">Explorar Lugares</a>
+                                </img>
+                            </div>
+                        </div>
+                        <!-- End Tab Content -->
+
+                        <!-- SVG Element -->
+                        <div class="hidden absolute top-0 end-0 translate-x-20 md:block lg:translate-x-20">
+                            <svg class="w-16 h-auto text-emerald-500" width="121" height="135" viewBox="0 0 121 135"
+                                fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M5 16.4754C11.7688 27.4499 21.2452 57.3224 5 89.0164" stroke="currentColor"
+                                    stroke-width="10" stroke-linecap="round" />
+                                <path d="M33.6761 112.104C44.6984 98.1239 74.2618 57.6776 83.4821 5"
+                                    stroke="currentColor" stroke-width="10" stroke-linecap="round" />
+                                <path d="M50.5525 130C68.2064 127.495 110.731 117.541 116 78.0874" stroke="currentColor"
+                                    stroke-width="10" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <!-- End SVG Element -->
+                    </div>
+                </div>
+                <!-- End Col -->
+            </div>
+            <!-- End Grid -->
+
+            <!-- Background Color -->
+            <div class="absolute inset-0 grid grid-cols-12 size-full">
+                <div
+                    class="col-span-full lg:col-span-7 lg:col-start-6 bg-gray-100 w-full h-5/6 rounded-xl sm:h-3/4 lg:h-full dark:bg-neutral-800">
+                </div>
+            </div>
+            <!-- End Background Color -->
+        </div>
+    </div>
+    <!-- End Features -->
+    <!-- ========== Fin descubre la magia de Uraba ========== -->
+
+
+    <footer class="bg-white rounded-full shadow m-4">
+        <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between text-center">
+            <span class="text-sm text-gray-500 sm:text-center">© 2024 <a href="./index.html"
+                    class="hover:underline">Parchate</a>.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm font-medium justify-center text-gray-500 sm:mt-0">
+                <li>
+                    <a href="./index.html" class="hover:underline me-4 md:me-6">Inicio</a>
+                </li>
+                <li>
+                    <a href="./contact.html" class="hover:underline me-4 md:me-6">Contacto</a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script src="./assets/js/preline.js"></script>
+
+</body>
+
+</html>

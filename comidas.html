@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parchate Aparatadó - Comida</title>
+    <link href="./output.css" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.webp" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+    
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+</head>
+
+<body style="font-family:'Poppins', sans-serif ;">
+<style>
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        @keyframes slideDown {
+            from { transform: translateY(-10px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .animate-slide-down {
+            animation: slideDown 0.3s ease-out;
+        }
+    /* Estilos generales para los labels de filtro */
+    .filter-label {
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Estilo cuando el filtro está seleccionado */
+    .filter-label.selected {
+        background-color: #4A90E2; /* Cambia a tu color preferido */
+        color: white;
+    }
+
+    /* Estilo general para los checkboxes ocultos */
+    input[type="checkbox"].hidden {
+        display: none;
+    }
+</style>
+
+  <nav class="ml-5 mt-5 flex relative" aria-label="Breadcrumb">
+    <ol class="inline-flex items-center space-x-1 md:space-x-2 rtl:space-x-reverse">
+      <li class="inline-flex items-center">
+        <a href="./index.html" class="inline-flex items-center text-sm font-medium text-gray-700 hover:text-emerald-600">
+          <svg class="w-3 h-3 me-2.5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
+            <path d="m19.707 9.293-2-2-7-7a1 1 0 0 0-1.414 0l-7 7-2 2a1 1 0 0 0 1.414 1.414L2 10.414V18a2 2 0 0 0 2 2h3a1 1 0 0 0 1-1v-4a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v4a1 1 0 0 0 1 1h3a2 2 0 0 0 2-2v-7.586l.293.293a1 1 0 0 0 1.414-1.414Z"/>
+          </svg>
+          Inicio
+        </a>
+      </li>
+      <li>
+        <div class="flex items-center">
+          <svg class="rtl:rotate-180 w-3 h-3 text-gray-400 mx-1" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 6 10">
+            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+          </svg>
+          <a href="#" class="ms-1 text-sm font-medium text-gray-700 hover:text-emerald-600 md:ms-2">Comidas</a>
+        </div>
+      </li>
+    </ol>
+    <div class="container mx-auto z-20">
+      <button id="openModal" class="bg-none absolute right-0 mx-5 text-emerald-400  transition duration-300 ease-in-out transform hover:scale-110">
+          <i class="fas fa-search fa-lg"></i>
+      </button>
+
+      <div id="searchModal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden items-center justify-center">
+        <div class="bg-white p-6 rounded-lg w-full max-w-md shadow-2xl animate-fade-in">
+            <div class="flex justify-between items-center mb-4">
+                <h2 class="text-2xl font-bold text-gray-800">Búsqueda Avanzada</h2>
+                <button id="closeModal" class="text-gray-500 hover:text-gray-700 transition duration-300 ease-in-out">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="relative mb-4">
+                <input type="text" id="searchInput" class="w-full p-3 border border-gray-300 rounded-lg pl-10 focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Buscar...">
+                <i class="fas fa-search absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+                <div id="spinner" class="hidden absolute right-3 top-1/2 transform -translate-y-1/2">
+                    <i class="fas fa-spinner fa-spin text-blue-500"></i>
+                </div>
+            </div>
+            <div class="mb-4">
+              <h3 class="text-lg font-bold text-gray-800 mb-2">Filtros</h3>
+              <div class="flex space-x-2">
+                  <label class="filter-label cursor-pointer flex items-center py-2 px-4 bg-gray-200 rounded-lg" for="filterOption1">
+                      <input type="checkbox" id="filterOption1" class="hidden">
+                      <span class="text-gray-700">Opción 1</span>
+                  </label>
+                  <label class="filter-label cursor-pointer flex items-center py-2 px-4 bg-gray-200 rounded-lg" for="filterOption2">
+                      <input type="checkbox" id="filterOption2" class="hidden">
+                      <span class="text-gray-700">Opción 2</span>
+                  </label>
+                  <label class="filter-label cursor-pointer flex items-center py-2 px-4 bg-gray-200 rounded-lg" for="filterOption3">
+                      <input type="checkbox" id="filterOption3" class="hidden">
+                      <span class="text-gray-700">Opción 3</span>
+                  </label>
+              </div>
+          </div>
+            <ul id="searchResults" class="mt-4 max-h-60 overflow-y-auto"></ul>
+        </div>
+    </div>
+</div>
+    </div>
+
+
+    </div>
+    </div>
+  </nav>
+<!-- Hero -->
+<div class="relative overflow-hidden before:absolute before:top-0 before:start-1/2 before:bg-[url('https://preline.co/assets/svg/examples/polygon-bg-element.svg')] before:bg-no-repeat before:bg-top before:bg-cover before:size-full before:-z-[1] before:transform before:-translate-x-1/2">
+  <div class="max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+    <!-- Announcement Banner -->
+    <div class="flex justify-center">
+      <a class="inline-flex items-center gap-x-2 bg-white border border-gray-200 text-sm text-gray-800 p-1 ps-3 rounded-full transition hover:border-gray-300 focus:outline-none focus:border-gray-300 dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200 dark:hover:border-neutral-600 dark:focus:border-neutral-600" href="#">
+        120 lugares con domicilios - Explorar lista.
+        <span class="py-1.5 px-2.5 inline-flex justify-center items-center gap-x-2 rounded-full bg-gray-200 font-semibold text-sm text-gray-600 dark:bg-neutral-700 dark:text-neutral-400">
+          <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+        </span>
+      </a>
+    </div>
+    <!-- End Announcement Banner -->
+
+    <!-- Title -->
+    <div class="mt-5 max-w-2xl text-center mx-auto">
+      <h1 class="block font-bold text-gray-800 text-4xl md:text-5xl lg:text-6xl dark:text-neutral-200">
+        ¡A Comer
+        <span class="bg-clip-text bg-gradient-to-tl from-emerald-800 to-emerald-400 text-transparent">Se Dijo!</span>
+      </h1>
+    </div>
+    <!-- End Title -->
+
+    <div class="mt-5 max-w-3xl text-center mx-auto">
+      <p class="text-lg text-gray-600 dark:text-neutral-400">Descubre los mejores lugares para desayunar, almorzar y cenar, con detalles sobre horarios de apertura, opciones de entrega a domicilio, y mucho más.</p>
+    </div>
+
+
+    <div class="mt-5 flex justify-center items-center gap-x-1 sm:gap-x-3">
+      <span class="text-sm text-gray-600 dark:text-neutral-400">Total de lugares:</span>
+      <span class="text-sm font-bold text-gray-900 dark:text-white">180</span>
+      <svg class="size-5 text-gray-300 dark:text-neutral-600" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <path d="M6 13L10 3" stroke="currentColor" stroke-linecap="round"/>
+      </svg>
+      <a class="inline-flex items-center gap-x-1 text-sm text-emerald-600 decoration-2 hover:underline focus:outline-none focus:underline font-medium dark:text-emerald-500" href="./parches.html">
+        Quiero es Parchar
+        <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+      </a>
+    </div>
+  </div>
+</div>
+<!-- End Hero -->  
+
+<!-- Card Section -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Grid -->
+  <div class="grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-4 gap-3 sm:gap-6">
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href="#">
+      <div class="p-4 md:p-5" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="hs-scale-animation-modal" data-hs-overlay="#hs-scale-animation-modal">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+              Tengo 5.000
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-neutral-500">
+              4 opciones.
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- OPCIONES 5000 -->
+      <div id="hs-scale-animation-modal" class="hs-overlay hidden size-full fixed top-0 start-0 z-[80] overflow-x-hidden overflow-y-auto pointer-events-none" role="dialog" tabindex="-1" aria-labelledby="hs-scale-animation-modal-label">
+        <div class="hs-overlay-animation-target hs-overlay-open:scale-100 hs-overlay-open:opacity-100 scale-95 opacity-0 ease-in-out transition-all duration-200 sm:w-[90%] m-3 sm:mx-auto min-h-[calc(100%-3.5rem)] flex items-center">
+          <div class="w-full flex flex-col bg-white border shadow-sm rounded-xl pointer-events-auto dark:bg-neutral-800 dark:border-neutral-700 dark:shadow-neutral-700/70">
+            <div class="flex justify-between items-center py-3 px-4 border-b dark:border-neutral-700">
+              <h3 id="hs-scale-animation-modal-label" class="font-bold text-gray-800 dark:text-white">
+                Tengo 5.000
+              </h3>
+              <button type="button" class="size-8 inline-flex justify-center items-center gap-x-2 rounded-full border border-transparent bg-gray-100 text-gray-800 hover:bg-gray-200 focus:outline-none focus:bg-gray-200 disabled:opacity-50 disabled:pointer-events-none dark:bg-neutral-700 dark:hover:bg-neutral-600 dark:text-neutral-400 dark:focus:bg-neutral-600" aria-label="Close" data-hs-overlay="#hs-scale-animation-modal">
+                <span class="sr-only">Close</span>
+                <svg class="shrink-0 size-4" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M18 6 6 18"></path>
+                  <path d="m6 6 12 12"></path>
+                </svg>
+              </button>
+            </div>
+            <div class="p-4 overflow-y-auto">
+              <section  class="grid gap-4" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))">
+                <div class="bg-emerald-100/20 rounded-xl shadow-emerald-suave transform transition-all duration-300 border-emerald-400/50 border-solid border-[2px] hover:scale-105 sm:flex flex-col ">
+                  <div class="w-full max-h-60 md:max-h-64 lg:max-h-80">
+                    <img src="./assets/img/amauz3.webp" alt="" class="rounded-xl w-full h-full object-cover object-center">
+                  </div>
+                  
+                  <div class="flex">
+                    <div class="p-4 flex flex-col h-full w-full">
+                      <span class="w-fit bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Fuera de domicilio</span>
+                      <h3 class="text-lg font-bold text-emerald-900">
+                        Hamburguesa
+                      </h3>
+                      <p class="text-gray-500 text-[.8rem]">
+                        Las hamburguesas del pueblo
+                      </p>
+                      <p class="text-gray-800 text-[.9rem] font-medium">
+                        $4.800
+                      </p>
+                      <div class=" flex justify-center gap-2 items-center w-full bg-emerald-700 rounded-full mt-4">
+                        <button onclick="window.location.href='./lugares/details.html'" class=" text-white text-[.9rem]font-bold py-1">
+                          Pedir
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(253, 253, 253);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-emerald-100/20 rounded-xl shadow-emerald-suave transform transition-all duration-300 border-emerald-400/50 border-solid border-[2px] hover:scale-105 sm:flex flex-col ">
+                  <div class="w-full max-h-60 md:max-h-64 lg:max-h-80">
+                    <img src="./assets/img/amauz3.webp" alt="" class="rounded-xl w-full h-full object-cover object-center">
+                  </div>
+                  
+                  <div class="flex">
+                    <div class="p-4 flex flex-col h-full w-full">
+                      <span class="w-fit bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Fuera de domicilio</span>
+                      <h3 class="text-lg font-bold text-emerald-900">
+                        Hamburguesa
+                      </h3>
+                      <p class="text-gray-500 text-[.8rem]">
+                        Las hamburguesas del pueblo
+                      </p>
+                      <p class="text-gray-800 text-[.9rem] font-medium">
+                        $4.800
+                      </p>
+                      <div class=" flex justify-center gap-2 items-center w-full bg-emerald-700 rounded-full mt-4">
+                        <button onclick="window.location.href='./lugares/details.html'" class=" text-white text-[.9rem]font-bold py-1">
+                          Pedir
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(253, 253, 253);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-emerald-100/20 rounded-xl shadow-emerald-suave transform transition-all duration-300 border-emerald-400/50 border-solid border-[2px] hover:scale-105 sm:flex flex-col ">
+                  <div class="w-full max-h-60 md:max-h-64 lg:max-h-80">
+                    <img src="./assets/img/amauz3.webp" alt="" class="rounded-xl w-full h-full object-cover object-center">
+                  </div>
+                  
+                  <div class="flex">
+                    <div class="p-4 flex flex-col h-full w-full">
+                      <span class="w-fit bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Fuera de domicilio</span>
+                      <h3 class="text-lg font-bold text-emerald-900">
+                        Hamburguesa
+                      </h3>
+                      <p class="text-gray-500 text-[.8rem]">
+                        Las hamburguesas del pueblo
+                      </p>
+                      <p class="text-gray-800 text-[.9rem] font-medium">
+                        $4.800
+                      </p>
+                      <div class=" flex justify-center gap-2 items-center w-full bg-emerald-700 rounded-full mt-4">
+                        <button onclick="window.location.href='./lugares/details.html'" class=" text-white text-[.9rem]font-bold py-1">
+                          Pedir
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(253, 253, 253);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-emerald-100/20 rounded-xl shadow-emerald-suave transform transition-all duration-300 border-emerald-400/50 border-solid border-[2px] hover:scale-105 sm:flex flex-col ">
+                  <div class="w-full max-h-60 md:max-h-64 lg:max-h-80">
+                    <img src="./assets/img/amauz3.webp" alt="" class="rounded-xl w-full h-full object-cover object-center">
+                  </div>
+                  
+                  <div class="flex">
+                    <div class="p-4 flex flex-col h-full w-full">
+                      <span class="w-fit bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Fuera de domicilio</span>
+                      <h3 class="text-lg font-bold text-emerald-900">
+                        Hamburguesa
+                      </h3>
+                      <p class="text-gray-500 text-[.8rem]">
+                        Las hamburguesas del pueblo
+                      </p>
+                      <p class="text-gray-800 text-[.9rem] font-medium">
+                        $4.800
+                      </p>
+                      <div class=" flex justify-center gap-2 items-center w-full bg-emerald-700 rounded-full mt-4">
+                        <button onclick="window.location.href='./lugares/details.html'" class=" text-white text-[.9rem]font-bold py-1">
+                          Pedir
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(253, 253, 253);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-emerald-100/20 rounded-xl shadow-emerald-suave transform transition-all duration-300 border-emerald-400/50 border-solid border-[2px] hover:scale-105 sm:flex flex-col ">
+                  <div class="w-full max-h-60 md:max-h-64 lg:max-h-80">
+                    <img src="./assets/img/amauz3.webp" alt="" class="rounded-xl w-full h-full object-cover object-center">
+                  </div>
+                  
+                  <div class="flex">
+                    <div class="p-4 flex flex-col h-full w-full">
+                      <span class="w-fit bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Fuera de domicilio</span>
+                      <h3 class="text-lg font-bold text-emerald-900">
+                        Hamburguesa
+                      </h3>
+                      <p class="text-gray-500 text-[.8rem]">
+                        Las hamburguesas del pueblo
+                      </p>
+                      <p class="text-gray-800 text-[.9rem] font-medium">
+                        $4.800
+                      </p>
+                      <div class=" flex justify-center gap-2 items-center w-full bg-emerald-700 rounded-full mt-4">
+                        <button onclick="window.location.href='./lugares/details.html'" class=" text-white text-[.9rem]font-bold py-1">
+                          Pedir
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(253, 253, 253);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="bg-emerald-100/20 rounded-xl shadow-emerald-suave transform transition-all duration-300 border-emerald-400/50 border-solid border-[2px] hover:scale-105 sm:flex flex-col ">
+                  <div class="w-full max-h-60 md:max-h-64 lg:max-h-80">
+                    <img src="./assets/img/amauz3.webp" alt="" class="rounded-xl w-full h-full object-cover object-center">
+                  </div>
+                  
+                  <div class="flex">
+                    <div class="p-4 flex flex-col h-full w-full">
+                      <span class="w-fit bg-red-100 text-red-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">Fuera de domicilio</span>
+                      <h3 class="text-lg font-bold text-emerald-900">
+                        Hamburguesa
+                      </h3>
+                      <p class="text-gray-500 text-[.8rem]">
+                        Las hamburguesas del pueblo
+                      </p>
+                      <p class="text-gray-800 text-[.9rem] font-medium">
+                        $4.800
+                      </p>
+                      <div class=" flex justify-center gap-2 items-center w-full bg-emerald-700 rounded-full mt-4">
+                        <button onclick="window.location.href='./lugares/details.html'" class=" text-white text-[.9rem]font-bold py-1">
+                          Pedir
+                        </button>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" style="fill: rgb(253, 253, 253);transform: ;msFilter:;"><path fill-rule="evenodd" clip-rule="evenodd" d="M18.403 5.633A8.919 8.919 0 0 0 12.053 3c-4.948 0-8.976 4.027-8.978 8.977 0 1.582.413 3.126 1.198 4.488L3 21.116l4.759-1.249a8.981 8.981 0 0 0 4.29 1.093h.004c4.947 0 8.975-4.027 8.977-8.977a8.926 8.926 0 0 0-2.627-6.35m-6.35 13.812h-.003a7.446 7.446 0 0 1-3.798-1.041l-.272-.162-2.824.741.753-2.753-.177-.282a7.448 7.448 0 0 1-1.141-3.971c.002-4.114 3.349-7.461 7.465-7.461a7.413 7.413 0 0 1 5.275 2.188 7.42 7.42 0 0 1 2.183 5.279c-.002 4.114-3.349 7.462-7.461 7.462m4.093-5.589c-.225-.113-1.327-.655-1.533-.73-.205-.075-.354-.112-.504.112s-.58.729-.711.879-.262.168-.486.056-.947-.349-1.804-1.113c-.667-.595-1.117-1.329-1.248-1.554s-.014-.346.099-.458c.101-.1.224-.262.336-.393.112-.131.149-.224.224-.374s.038-.281-.019-.393c-.056-.113-.505-1.217-.692-1.666-.181-.435-.366-.377-.504-.383a9.65 9.65 0 0 0-.429-.008.826.826 0 0 0-.599.28c-.206.225-.785.767-.785 1.871s.804 2.171.916 2.321c.112.15 1.582 2.415 3.832 3.387.536.231.954.369 1.279.473.537.171 1.026.146 1.413.089.431-.064 1.327-.542 1.514-1.066.187-.524.187-.973.131-1.067-.056-.094-.207-.151-.43-.263"></path></svg>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div class="flex justify-end items-center gap-x-2 py-3 px-4 border-t ">
+            </div>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+              Tengo 10.000
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-neutral-500">
+              5 opciones.
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+              Tengo 15.000
+            </h3>
+            <p class="text-sm text-gray-500 dark:text-neutral-500">
+              8 opciones
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 dark:text-neutral-200" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition dark:bg-neutral-900 dark:border-neutral-800" href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+              Tengo 20.000
+            </h3>
+            <p class="text-sm text-gray-500">
+              11 opciones
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition" href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800">
+              Tengo 25.000
+            </h3>
+            <p class="text-sm text-gray-500">
+              37 opciones
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition" href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800 ">
+              Tengo 30.000
+            </h3>
+            <p class="text-sm text-gray-500 ">
+              28 opciones
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition" href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800 dark:group-hover:text-neutral-400 dark:text-neutral-200">
+              Tengo 35.000
+            </h3>
+            <p class="text-sm text-gray-500 ">
+              33 opciones
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+
+    <!-- Card -->
+    <a class="group flex flex-col bg-white border shadow-sm rounded-xl hover:shadow-md focus:outline-none focus:shadow-md transition  " href="#">
+      <div class="p-4 md:p-5">
+        <div class="flex justify-between items-center gap-x-3">
+          <div class="grow">
+            <h3 class="group-hover:text-emerald-600 font-semibold text-gray-800  ">
+              Tengo 40.000 
+            </h3>
+            <p class="text-sm text-gray-500 ">
+              39 opcines
+            </p>
+          </div>
+          <div>
+            <svg class="shrink-0 size-5 text-gray-800 " xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+          </div>
+        </div>
+      </div>
+    </a>
+    <!-- End Card -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Card Section -->
+<div class="absolute inset-x-0 top-[calc(100%-13rem)] -z-10 transform-gpu overflow-hidden blur-3xl sm:top-[calc(100%-30rem)]"
+aria-hidden="true">
+<div class="relative left-[calc(50%+3rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 bg-gradient-to-tr from-[#005947] to-[#00d49a] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+    style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)">
+</div>
+</div>
+
+<!-- Features -->
+<div class="max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto">
+  <!-- Grid -->
+  <div class="md:grid md:grid-cols-2 md:items-center md:gap-12 xl:gap-32">
+    <div>
+      <img class="rounded-2xl p-1 border-emerald-300 border-solid border-[2px] shadow-emerald-suave" src="./assets/img/delimonster.webp" alt="Features Image">
+    </div>
+    <!-- End Col -->
+
+    <div class="mt-5 sm:mt-10 lg:mt-0">
+      <div class="space-y-6 sm:space-y-8">
+        <!-- Title -->
+        <div class="space-y-2 md:space-y-4">
+          <h2 class="font-bold text-3xl lg:text-4xl text-emerald-900 ">
+            DELIMONSTER
+          </h2>
+          <p class="text-gray-500 ">
+            Delimonster es el lugar perfecto para los amantes de las picadas abundantes y llenas de sabor. Se destaca por su enfoque en brindar porciones generosas de carne, con una proporción de más liga y menos papas, cada picada es una explosión de sabores, perfecta para compartir en grupo o disfrutar en solitario. Con un ambiente relajado y una atención al cliente cercana, es el destino ideal para quienes buscan una comida sustanciosa y deliciosa.
+          </p>
+        </div>
+        <!-- End Title -->
+
+        <!-- List -->
+        <ul class="space-y-2 sm:space-y-4">
+          <li class="flex gap-x-3">
+            <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-emerald-50 text-emerald-600 ">
+              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div class="grow">
+              <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
+                <span class="font-bold">Espacio </span> acogedor
+              </span>
+            </div>
+          </li>
+
+          <li class="flex gap-x-3">
+            <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-emerald-50 text-emerald-600 ">
+              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div class="grow">
+              <span class="text-sm sm:text-base text-gray-500 dark:text-neutral-500">
+                Buena atención al <span class="font-bold">cliente</span>
+              </span>
+            </div>
+          </li>
+
+          <li class="flex gap-x-3">
+            <span class="mt-0.5 size-5 flex justify-center items-center rounded-full bg-emerald-50 text-emerald-600  ">
+              <svg class="shrink-0 size-3.5" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+            </span>
+            <div class="grow">
+              <span class="text-sm sm:text-base text-gray-500">
+                Precios accesibles
+              </span>
+            </div>
+          </li>
+        </ul>
+        <!-- End List -->
+      </div>
+    </div>
+    <!-- End Col -->
+  </div>
+  <!-- End Grid -->
+</div>
+<!-- End Features --> 
+<iframe src="./slider-lugares/slider-comidas-rapidas/index.html" width="100%" height="600px" style="border:none;"></iframe>
+
+<iframe class="" src="./slider-lugares/slider-restaurantes/index.html" width="100%" height="600px" style="border:none;"></iframe>
+
+
+  <script src="./assets/js/preline.js"></script>
+  <script src="./assets/js/script.js"></script>
+</body>
+
+</html>
